@@ -1,3 +1,40 @@
 #!/bin/bash
 #
 # Environment for the Gaia DPAC module
+#
+# Location of DPAC commons (soft & docs)
+export DPAC_HOME=$HOME/DPAC
+
+# DPAC SVN
+# ----------------------------------------------------------
+export DPAC_SVN=http://gaia.esac.esa.int/dpacsvn/
+export DPAC_TRUNK=$DPAC_SVN/DPAC
+export DPAC_BRANCH=$DPAC_SVN/DPAC_branches
+export DPAC_TAG=$DPAC_SVN/DPAC_tags
+
+# COMMONS
+# ----------------------------------------------------------
+# CU1 commons software
+export SOFCOMMON=$DPAC_HOME/software/cu1common
+# DPAC LaTeX document templates
+export CU1DOCCOM=$DPAC_HOME/docs/cu1common
+# CU5 LaTeX document templates
+export CU5TEX=$DPAC_HOME/docs/cu5tex
+
+# DPAC LaTeX
+# ----------------------------------------------------------
+DPAC_TEXMF=$DOCCOMMON/texmf
+export BSTINPUTS=$DPAC_TEXMF/bibtex/bst:.:$BSTINPUTS
+export TEXINPUTS=.:$DPAC_TEXMF/tex//:$CU5TEX:$TEXTINPUTS
+export BIBINPUTS=$DPAC_TEXMF/bibtex/bib:.:$BIBINPUTS
+
+#
+# Our Documentation tree
+export DPAC_DOC=$HOME/Documents/DPAC
+export CU5DOCS=$DPAC_DOC/CU5/SVN
+export DPCIDOCS=$DPAC_DOC/DPCI/SVN
+#
+# Processing environment
+export DPAC_SCRATCH=$HOME/GaiaScratch
+export DPAC_OPS=$DPAC_SCRATCH/Ops
+export DPAC_DATA=$DPAC_SCRATCH/Data
