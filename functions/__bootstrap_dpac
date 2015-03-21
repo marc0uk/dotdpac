@@ -1,0 +1,43 @@
+#!/bin/bash
+#
+# PRIVATE: Bootstrap the DPAC workspace
+__bootstrap_dpac() {
+    #
+    # DEFAULT SVN LOCATIONs
+    local SVN_SOFTCOMMON=$DPAC_TRUNK/CU1/software/common
+    local SVN_DOCCOM=$DPAC_TRUNK/CU1/docs/common
+    local SVN_CU5DOCCOM=$DPAC_TRUNK/CU5/docs/TeX
+    #
+    # Create the CU1 sofcommon
+    mkp $SOFCOMMON
+    svn checkout $SVN_SOFTCOMMON $SOFCOMMON
+    #
+    # Create the CU1 doc commons
+    mkp $CU1DOCCOM
+    svn checkout $SVN_DOCCOM $CU1DOCCOM
+    #
+    # Create the CU5 doc commons
+    svn checkout $SVN_CU5DOCCOM $CU5TEX
+    #
+    # Create the CU5 documentation tree
+    mkp $CU5DOCS
+    svn checkout $DPAC_TRUNK/CU5/docs $CU5DOCS
+    #
+    # Create the DPCI documentation tree
+    mkp $DPCIDOCS
+    svn checkout $DPAC_TRUNK/DPCI/docs $DPCIDOCS
+    #
+    # Create the scratch area
+    mkd $DPAC_SCRATCH_OPS
+    mkd $DPAC_SCRATCH_DATA
+    mkd $DPAC_SCRATCH_TRUNK
+    #
+    # Checkout all the DPCI TRUNK
+    svn checkout $DPAC_TRUNK/DPCI/software/core $DPAC_SCRATCH_TRUNK/core
+    svn checkout $DPAC_TRUNK/DPCI/software/support $DPAC_SCRATCH_TRUNK/support
+    svn checkout $DPAC_TRUNK/DPCI/software/automation $DPAC_SCRATCH_TRUNK/automation
+    #
+    # Checkout all the CU5 TRUNK
+    svn checkout $DPAC_TRUNK/CU5/software/Photometry $DPAC_SCRATCH_TRUNK/Photometry
+    svn checkout $DPAC_TRUNK/CU5/software/Testing/PhotPipeValidation $DPAC_SCRATCH_TRUNK/PhotPipeValidation
+}
