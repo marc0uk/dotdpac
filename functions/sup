@@ -1,0 +1,11 @@
+#!/bin/bash
+#
+# Update SVN repository
+sup() {
+    local BACK=`pwd`
+    cd $1
+    if [ $? -eq 0 ]; then
+	svn up
+    fi
+    cd $BACK
+}
