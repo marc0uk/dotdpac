@@ -1,0 +1,26 @@
+#!/bin/bash
+#
+# Update the DPAC workspace
+dup() {
+    if [ ! -d $DPAC_HOME ]; then
+	__bootstrap_dpac
+    else
+	# Projects to update
+	declare -a projects=(
+	    $SOFCOMMON
+	    $CU1DOCCOM
+	    $CU5TEX
+	    $CU5DOCS
+	    $DPCIDOCS
+	    $DPAC_SCRATCH_TRUNK/core
+	    $DPAC_SCRATCH_TRUNK/support
+	    $DPAC_SCRATCH_TRUNK/automation
+	    $DPAC_SCRATCH_TRUNK/Photometry
+	    $DPAC_SCRATCH_TRUNK/PhotPipeValidation
+	)
+	# Update everything
+	for index in ${!projects[*]}; do
+            sup ${files[$index]}
+	done
+    fi
+}
