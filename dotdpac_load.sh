@@ -10,6 +10,7 @@ load_dpac() {
     declare -a files=(
 	$MODROOT/${MODNAME}_exports
 	$MODROOT/${MODNAME}_aliases
+	$MODROOT/functions/*
     )
     
     # if these files are readable, source them
