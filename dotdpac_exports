@@ -4,6 +4,8 @@
 #
 # Location of DPAC commons (soft & docs)
 export DPAC_HOME=$HOME/DPAC
+#
+# DPAC user
 export DPAC_USER=mriello
 
 # DPAC SVN
@@ -44,3 +46,16 @@ export DPAC_SCRATCH=$HOME/GaiaScratch
 export DPAC_SCRATCH_OPS=$DPAC_SCRATCH/Ops
 export DPAC_SCRATCH_DATA=$DPAC_SCRATCH/Data
 export DPAC_SCRATCH_TRUNK=$DPAC_SCRATCH/TRUNK
+
+# DPAC Eclipse area
+# ----------------------------------------------------------
+# Default location for Eclipse workspaces
+export DPAC_ECLIPSE=$DPAC_HOME/Eclipse
+# Default location for IntelliJ projects
+export DPAC_IDEA=$DPAC_HOME/IntelliJ
+# Default set of DPCI core projects
+export PROJ_CORE="DpciBaseline Echidna Scylla Charybdis"
+# Default set of DPCI support projects
+export PROJ_SUPPORT="Chimera Dtv DpciTests"
+# Default set of PhotPipe projects
+export PROJ_PHOTPIPE="DataTypeDefinitions Du04Catalogue Du04Cdb Du04Ingestion Du04Provenance Du04Scene Du11Background Du11Common Du11CrowdingEvaluation Du11Deblending Du11Decontamination Du11Straylight Du11TemplateLibrary Du14ExternalCalibration Du15Common Du15Phot Du15Spec Hydra PhotPipe PhotPipeBindings PhotPipeCore PhotPipeGraphics PhotPipeHadoop PhotPipeParent PhotPipeProcessing PhotPipePsf PhotPipeServices"
