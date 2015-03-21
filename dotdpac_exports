@@ -4,6 +4,7 @@
 #
 # Location of DPAC commons (soft & docs)
 export DPAC_HOME=$HOME/DPAC
+export DPAC_USER=mriello
 
 # DPAC SVN
 # ----------------------------------------------------------
@@ -11,6 +12,7 @@ export DPAC_SVN=http://gaia.esac.esa.int/dpacsvn/
 export DPAC_TRUNK=$DPAC_SVN/DPAC
 export DPAC_BRANCH=$DPAC_SVN/DPAC_branches
 export DPAC_TAG=$DPAC_SVN/DPAC_tags
+export DPAC_MINE=$DPAC_BRANCH/CU5/software/personal/$DPAC_USER
 
 # COMMONS
 # ----------------------------------------------------------
