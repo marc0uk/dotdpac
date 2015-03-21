@@ -18,8 +18,10 @@ export DPAC_MINE=$DPAC_BRANCH/CU5/software/personal/$DPAC_USER
 # ----------------------------------------------------------
 # CU1 commons software
 export SOFCOMMON=$DPAC_HOME/software/cu1common
+
 # DPAC LaTeX document templates
 export CU1DOCCOM=$DPAC_HOME/docs/cu1common
+
 # CU5 LaTeX document templates
 export CU5TEX=$DPAC_HOME/docs/cu5tex
 
