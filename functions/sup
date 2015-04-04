@@ -3,9 +3,11 @@
 # Update SVN repository
 sup() {
     local BACK=`pwd`
-    cd $1
+    cd $1 > /dev/null 2&>1
     if [ $? -eq 0 ]; then
 	svn up
+    else
+	e_error "No such directory: $1"
     fi
     cd $BACK
 }
