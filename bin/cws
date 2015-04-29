@@ -1,0 +1,82 @@
+#!/bin/bash
+#
+# Perform an 'svn switch' to a new branch of all the projects in
+# an eclipse workspace
+#
+TRUNK_CU5=$DPAC_TRUNK/CU5/software
+TRUNK_DPCI=$DPAC_TRUNK/DPCI/software
+BRANCH_CU5=$DPAC_BRANCH/CU5/software/operations
+BRANCH_DPCI=$DPAC_BRANCH/DPCI/software/operations
+export CYCLEID=C00
+#
+
+usage() {
+    echo ""
+    echo "Usage:"
+    echo "  $0 FULL_PATH_TO_WORKSPACE BRANCHID [CYCLEID]"
+    echo ""
+    echo "  Default cycle: $CYCLEID"
+    echo ""
+}
+
+co_group() {
+    # $1 is the name of the variable containing the list of projects
+    local PROJECTS=${!1}
+    local BRANCH=$2
+    e_header "Checking out projects from $BRANCH"
+    for proj in $PROJECTS; do
+	svn_co $proj $BRANCH
+    done
+}
+
+svn_co() {
+    local PROJ=$1
+    local BRANCH=$2
+    #
+    echo "Checking out $PROJ"
+    svn checkout $BRANCH/$PROJ
+}
+
+if [ $# -lt 2 ]; then 
+    usage
+    exit 1
+fi
+WORKSPACE=$1
+BRANCHID=$2
+if [ $# -eq 3 ]; then
+    export CYCLEID=$3
+fi
+
+if [ -d $WORKSPACE ]; then
+    e_error "Specified workspace already exists: $WORKSPACE"
+    exit 1
+else
+    mkdir -p $WORKSPACE
+fi
+
+if [ "$BRANCHID" = "TRUNK" ]; then
+    DPCIALL=$TRUNK_DPCI
+    CU5PHOT=$TRUNK_CU5
+else
+    DPCIALL=$BRANCH_DPCI/$CYCLEID/$BRANCHID
+    CU5PHOT=$BRANCH_CU5/$CYCLEID/$BRANCHID
+fi
+
+cat <<EOF
+
+  Creating new Eclipse workspace at location:
+      $WORKSPACE
+  Checking modules from:
+      DPCI: $DPCIALL
+      CU5 : $CU5PHOT
+
+EOF
+
+here=`pwd`;
+cd $WORKSPACE
+co_group PROJ_CORE $DPCIALL/core
+co_group PROJ_SUPPORT $DPCIALL/support
+co_group PROJ_PHOTPIPE $CU5PHOT/Photometry
+cd $here
+e_success "Eclipse workspace have been initialised with $BRANCHID"
+exit 0
