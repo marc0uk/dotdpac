@@ -1,0 +1,19 @@
+#!/bin/bash
+#
+# Directories to be prepended to PATH
+declare -a dirs_to_append=(
+    "$DOT_MODS/dotdpac/bin"
+)
+
+# Append directories to PATH
+for index in ${!dirs_to_append[*]}
+do
+    if [ -d ${dirs_to_append[$index]} ]; then
+        # If these bins exist, then append them to existing PATH
+        PATH="$PATH:${dirs_to_append[$index]}"
+    fi
+done
+
+unset dirs_to_append
+
+export PATH
