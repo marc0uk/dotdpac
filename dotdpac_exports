@@ -16,6 +16,11 @@ export DPAC_BRANCH=$DPAC_SVN/DPAC_branches
 export DPAC_TAG=$DPAC_SVN/DPAC_tags
 export DPAC_MINE=$DPAC_BRANCH/CU5/software/personal/$DPAC_USER
 
+# DPCI & CU5 SVN
+# ----------------------------------------------------------
+export DPAC_DPCI=$DPAC_TRUNK/DPCI/software
+export DPAC_PP=$DPAC_TRUNK/CU5/software/Photometry
+
 # COMMONS
 # ----------------------------------------------------------
 # CU1 commons software
