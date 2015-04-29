@@ -18,8 +18,8 @@ export DPAC_MINE=$DPAC_BRANCH/CU5/software/personal/$DPAC_USER
 
 # DPCI & CU5 SVN
 # ----------------------------------------------------------
-export DPAC_DPCI=$DPAC_TRUNK/DPCI/software
 export DPAC_PP=$DPAC_TRUNK/CU5/software/Photometry
+export DPAC_DPCI=$DPAC_TRUNK/DPCI/software
 
 # COMMONS
 # ----------------------------------------------------------
