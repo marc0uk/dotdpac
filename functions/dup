@@ -20,7 +20,7 @@ dup() {
 	)
 	# Update everything
 	for index in ${!projects[*]}; do
-            sup ${files[$index]}
+            sup ${projects[$index]}
 	done
     fi
 }
