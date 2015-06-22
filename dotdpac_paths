@@ -3,6 +3,7 @@
 # Directories to be prepended to PATH
 declare -a dirs_to_append=(
     "$DOT_MODS/dotdpac/bin"
+    "$SOFCOMMON/apache-ant-$CU1ANT_VERSION/bin"
 )
 
 # Append directories to PATH
