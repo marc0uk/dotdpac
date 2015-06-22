@@ -8,8 +8,8 @@ load_dpac() {
     local MODROOT=$DOT_MODS_ACTIVE/$MODNAME
     # Files to be loaded
     declare -a files=(
+    	$MODROOT/${MODNAME}_exports
 	$MODROOT/${MODNAME}_paths
-	$MODROOT/${MODNAME}_exports
 	$MODROOT/${MODNAME}_aliases
 	$MODROOT/functions/*
     )
