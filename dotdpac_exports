@@ -28,16 +28,16 @@ export SOFCOMMON=$DPAC_HOME/software/cu1common
 
 # DPAC LaTeX document templates
 export CU1DOCCOM=$DPAC_HOME/docs/cu1common
+export DPAC_TEXMF=$CU1DOCCOM/texmf
 
 # CU5 LaTeX document templates
 export CU5TEX=$DPAC_HOME/docs/cu5tex
 
 # DPAC LaTeX
 # ----------------------------------------------------------
-DPAC_TEXMF=$DOCCOMMON/texmf
 export BSTINPUTS=$DPAC_TEXMF/bibtex/bst:.:$BSTINPUTS
-export TEXINPUTS=.:$DPAC_TEXMF/tex/:$CU5TEX:$TEXINPUTS
 export BIBINPUTS=$DPAC_TEXMF/bibtex/bib:.:$BIBINPUTS
+export TEXINPUTS=.:$DPAC_TEXMF/tex/:$CU5TEX:$TEXINPUTS
 
 #
 # Our Documentation tree
