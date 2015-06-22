@@ -36,7 +36,7 @@ export CU5TEX=$DPAC_HOME/docs/cu5tex
 # ----------------------------------------------------------
 DPAC_TEXMF=$DOCCOMMON/texmf
 export BSTINPUTS=$DPAC_TEXMF/bibtex/bst:.:$BSTINPUTS
-export TEXINPUTS=.:$DPAC_TEXMF/tex//:$CU5TEX:$TEXTINPUTS
+export TEXINPUTS=.:$DPAC_TEXMF/tex/:$CU5TEX:$TEXINPUTS
 export BIBINPUTS=$DPAC_TEXMF/bibtex/bib:.:$BIBINPUTS
 
 #
