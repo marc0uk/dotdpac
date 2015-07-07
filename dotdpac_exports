@@ -41,7 +41,7 @@ export CU5TEX=$DPAC_HOME/docs/cu5tex
 # ----------------------------------------------------------
 export BSTINPUTS=$DPAC_TEXMF/bibtex/bst:.:$BSTINPUTS
 export BIBINPUTS=$DPAC_TEXMF/bibtex/bib:.:$BIBINPUTS
-export TEXINPUTS=.:$DPAC_TEXMF/tex/:$CU5TEX:$TEXINPUTS
+export TEXINPUTS=.:$DPAC_TEXMF/tex//:$CU5TEX//:$TEXINPUTS
 
 #
 # Our Documentation tree
