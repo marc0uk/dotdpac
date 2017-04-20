@@ -27,7 +27,7 @@ export DPAC_DPCI=$DPAC_TRUNK/DPCI/software
 export SOFCOMMON=$DPAC_HOME/software/cu1common
 
 # Version of Ant bundled with CU1 common software
-export CU1ANT_VERSION=1.9.2
+export CU1ANT_VERSION=1.9.6
 
 # DPAC LaTeX document templates
 export DOCCOMMON=$DPAC_HOME/docs/cu1common
